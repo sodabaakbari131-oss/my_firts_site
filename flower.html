@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Beautiful Flower</title>
-
   <style>
     body {
       margin: 0;
@@ -15,10 +14,19 @@
       font-family: Arial, sans-serif;
     }
 
-    .flower {
+    .flower-container {
       position: relative;
-      width: 220px;
-      height: 220px;
+      width: 240px;
+      height: 240px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .flower {
+      position: absolute;
+      width: 100%;
+      height: 100%;
       animation: spin 15s linear infinite;
     }
 
@@ -29,12 +37,12 @@
       background: linear-gradient(to top, #ff69b4, #ffc1dc);
       border-radius: 50%;
       top: 10px;
-      left: 80px;
+      left: calc(50% - 30px); /* center horizontally */
       transform-origin: bottom center;
       box-shadow: 0 0 8px rgba(255,105,180,0.5);
     }
 
-    /* 10 smooth petals */
+    /* 10 petals */
     .petal:nth-child(1) { transform: rotate(0deg); }
     .petal:nth-child(2) { transform: rotate(36deg); }
     .petal:nth-child(3) { transform: rotate(72deg); }
@@ -46,16 +54,12 @@
     .petal:nth-child(9) { transform: rotate(288deg); }
     .petal:nth-child(10){ transform: rotate(324deg); }
 
-    /* PERFECT CENTER */
+    /* PERFECT CENTER USING FLEX */
     .center {
-      position: absolute;
       width: 70px;
       height: 70px;
       background: radial-gradient(circle, #fff59d, #fbc02d);
       border-radius: 50%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       box-shadow: 0 0 15px rgba(255,193,7,0.8);
       z-index: 10;
     }
@@ -77,17 +81,19 @@
 
 <body>
 
-  <div class="flower">
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
+  <div class="flower-container">
+    <div class="flower">
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+    </div>
 
     <div class="center"></div>
   </div>
