@@ -3,108 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <title>Beautiful Flower</title>
+
   <style>
     body {
+      margin: 0;
+      height: 100vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       background: radial-gradient(circle, #fff0f5, #f8bbd0);
       font-family: Arial, sans-serif;
     }
 
     .flower {
       position: relative;
-      width: 240px;
-      height: 240px;
-      animation: slowSpin 12s linear infinite;
+      width: 220px;
+      height: 220px;
+      animation: spin 15s linear infinite;
     }
 
     .petal {
       position: absolute;
-      width: 50px;
-      height: 130px;
-      background: linear-gradient(to top, #ff80ab, #ffc1e3);
+      width: 60px;
+      height: 120px;
+      background: linear-gradient(to top, #ff69b4, #ffc1dc);
       border-radius: 50%;
+      top: 10px;
+      left: 80px;
       transform-origin: bottom center;
-      top: 30px;
-      left: 95px;
-      box-shadow: 0 0 10px rgba(255,105,180,0.6);
+      box-shadow: 0 0 8px rgba(255,105,180,0.5);
     }
 
-    /* 12 petals */
-    .petal:nth-child(1)  { transform: rotate(0deg); }
-    .petal:nth-child(2)  { transform: rotate(30deg); }
-    .petal:nth-child(3)  { transform: rotate(60deg); }
-    .petal:nth-child(4)  { transform: rotate(90deg); }
-    .petal:nth-child(5)  { transform: rotate(120deg); }
-    .petal:nth-child(6)  { transform: rotate(150deg); }
-    .petal:nth-child(7)  { transform: rotate(180deg); }
-    .petal:nth-child(8)  { transform: rotate(210deg); }
-    .petal:nth-child(9)  { transform: rotate(240deg); }
-    .petal:nth-child(10) { transform: rotate(270deg); }
-    .petal:nth-child(11) { transform: rotate(300deg); }
-    .petal:nth-child(12) { transform: rotate(330deg); }
+    /* 10 smooth petals */
+    .petal:nth-child(1) { transform: rotate(0deg); }
+    .petal:nth-child(2) { transform: rotate(36deg); }
+    .petal:nth-child(3) { transform: rotate(72deg); }
+    .petal:nth-child(4) { transform: rotate(108deg); }
+    .petal:nth-child(5) { transform: rotate(144deg); }
+    .petal:nth-child(6) { transform: rotate(180deg); }
+    .petal:nth-child(7) { transform: rotate(216deg); }
+    .petal:nth-child(8) { transform: rotate(252deg); }
+    .petal:nth-child(9) { transform: rotate(288deg); }
+    .petal:nth-child(10){ transform: rotate(324deg); }
 
-   .center {
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  background: radial-gradient(circle, #fff59d, #fbc02d);
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 20px rgba(255,193,7,0.8);
-  z-index: 10;
-}
-
-    /* leaves */
-    .leaf {
+    /* PERFECT CENTER */
+    .center {
       position: absolute;
-      width: 80px;
-      height: 40px;
-      background: linear-gradient(to right, #66bb6a, #a5d6a7);
-      border-radius: 40px;
-      top: 170px;
+      width: 70px;
+      height: 70px;
+      background: radial-gradient(circle, #fff59d, #fbc02d);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 15px rgba(255,193,7,0.8);
+      z-index: 10;
     }
 
-    .leaf.left {
-      left: -10px;
-      transform: rotate(-20deg);
-    }
-
-    .leaf.right {
-      right: -10px;
-      transform: rotate(20deg);
-    }
-
-    @keyframes slowSpin {
+    @keyframes spin {
       from { transform: rotate(0deg); }
       to   { transform: rotate(360deg); }
     }
 
     a {
-      margin-top: 30px;
+      position: absolute;
+      bottom: 30px;
       text-decoration: none;
       font-weight: bold;
       color: #333;
     }
   </style>
 </head>
+
 <body>
 
   <div class="flower">
-    <div class="petal"></div><div class="petal"></div><div class="petal"></div>
-    <div class="petal"></div><div class="petal"></div><div class="petal"></div>
-    <div class="petal"></div><div class="petal"></div><div class="petal"></div>
-    <div class="petal"></div><div class="petal"></div><div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
 
     <div class="center"></div>
-
-    <div class="leaf left"></div>
-    <div class="leaf right"></div>
   </div>
 
   <a href="index.html">⬅ Back to Main Page</a>
