@@ -1,16 +1,69 @@
-<h1>Hello,<h1>Hello, welcome to my first website!</h1></h1>
-<button onclick="change()" style="background-color: yellow; color: red;">Press Here!</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My First Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #fff);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
 
-<script>
-function change() {
-  document.querySelector("h1").innerText = "It changed!";
-}
-</script>
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
 
-<p><a href="flower.html">See the Spinning Flower</a></p>
+    button {
+      padding: 12px 28px;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #ff9800, #ff5722);
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
 
-<script>
-function change() {
-  document.querySelector("h1").innerText = "You clicked the button!";
-}
-</script>
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    a {
+      display: block;
+      margin-top: 25px;
+      text-decoration: none;
+      color: #0077cc;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <h1 id="title">Hello, welcome to my first website!</h1>
+
+    <button onclick="changeText()">Press Here</button>
+
+    <a href="flower.html">🌸 See the Spinning Flower</a>
+  </div>
+
+  <script>
+    function changeText() {
+      document.getElementById("title").innerText = "You clicked the button!";
+    }
+  </script>
+
+</body>
+</html>
